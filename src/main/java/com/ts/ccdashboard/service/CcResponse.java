@@ -1,4 +1,4 @@
-package com.ts.ccdashboard;
+package com.ts.ccdashboard.service;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
