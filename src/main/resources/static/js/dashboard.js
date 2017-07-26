@@ -1,5 +1,5 @@
 angular.module('dashboard', [])
-    .controller('home', function($scope, $http) {
+    .controller('home', function($scope, $interval, $http, $filter) {
         $scope.red = {
             "color" : "red"
         };
@@ -7,7 +7,12 @@ angular.module('dashboard', [])
             "color" : "green"
         };
 
-        $http.get('/data/').success(function(data) {
-            $scope.ccInfo = data;
-        })
+        var fill = function(){
+            $scope.time = $filter('date')(new Date(), 'HH:mm:ss');
+            $http.get('/data/').success(function (data) {
+                $scope.ccInfo = data;
+            })
+        };
+        fill();
+        $interval(fill, 30000);
     });
