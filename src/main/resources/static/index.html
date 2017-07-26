@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="dashboard" ng-controller="home">
+<head>
+    <title>CryptoCurrency Dashboard</title>
+    <link href="css/angular-bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="text-align: center">
+    <div ng-repeat="info in ccInfo">
+        <h1 ng-if="info.value < 0" ng-style="red">{{info.id}}: {{info.value}}%</h1>
+        <h1 ng-if="info.value > 0" ng-style="green">{{info.id}}: {{info.value}}%</h1>
+    </div>
+</div>
+<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
