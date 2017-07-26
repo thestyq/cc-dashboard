@@ -35,12 +35,12 @@ public class CcService {
         return new CcResponse(lastChecked, ccInfo);
     }
 
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(fixedRate = 600000)
     public void calculateData() {
         List<CcResponse.CcInfo> info = new ArrayList<>();
         for (String market : markets) {
             float differencePercentage = calculateDifferencePercentage(market);
-            if (Math.abs(differencePercentage) > 1) {
+            if (Math.abs(differencePercentage) > 10.0f) {
                 info.add(new CcResponse.CcInfo(market, differencePercentage));
             }
         }

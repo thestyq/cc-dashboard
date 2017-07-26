@@ -14,5 +14,5 @@ angular.module('dashboard', [])
             })
         };
         fill();
-        $interval(fill, 30000);
+        $interval(fill, 300000);
     });
