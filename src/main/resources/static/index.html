@@ -6,6 +6,7 @@
 </head>
 <body>
 <div class="container" style="text-align: center">
+    <h1>Last checked: {{time}}</h1>
     <div ng-repeat="info in ccInfo">
         <h1 ng-if="info.value < 0" ng-style="red">{{info.id}}: {{info.value}}%</h1>
         <h1 ng-if="info.value > 0" ng-style="green">{{info.id}}: {{info.value}}%</h1>
