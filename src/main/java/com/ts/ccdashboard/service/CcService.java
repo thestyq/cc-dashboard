@@ -28,7 +28,7 @@ public class CcService {
         this.externalApiService = externalApiService;
         this.marketsLatestExchangeRates = new HashMap<>();
         this.markets = markets;
-        calculateData();
+        updateLastChecked();
     }
 
     public CcResponse getData() {
